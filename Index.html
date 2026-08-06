@@ -3,203 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeneconk - Vulnerability Scanner</title>
+    <title>Jeneconk Security Operations Center</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- CSS-Only Matrix Background -->
     <div id="matrix-bg"></div>
     
+    <!-- Navigation -->
     <nav>
         <div class="logo">
             <span class="brand">JENECONK</span>
             <span class="sub">Security Operations Center</span>
         </div>
         <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="vulnerability.html" class="active">Scanner</a></li>
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="vulnerability.html">Scanner</a></li>
             <li><a href="breach-db.html">Breaches</a></li>
             <li><a href="exploit-lab.html">Exploits</a></li>
             <li><a href="evasion-tech.html">Evasion</a></li>
         </ul>
         <div class="status-indicator">
             <span class="dot"></span>
-            SCANNING
+            SECURE
         </div>
     </nav>
 
     <main>
+        <!-- Header -->
         <div class="page-header">
-            <h1>🔍 Vulnerability Scanner</h1>
+            <h1>🛡️ Security Operations Dashboard</h1>
             <div class="header-stats">
-                <span>🔎 Active Scan: 192.168.1.0/24</span>
-                <span>⏱️ Elapsed: 2:34</span>
-                <span>📊 Progress: 67%</span>
+                <span>🟢 Status: Protected</span>
+                <span>📊 Threat Level: Elevated</span>
+                <span>⏱️ Uptime: 99.97%</span>
             </div>
         </div>
 
-        <!-- Scan Interface -->
-        <div class="scan-interface">
-            <div class="scan-bar">
-                <div class="scan-progress" style="width: 67%;">
-                    <span>67%</span>
+        <!-- Threat Statistics - New Layout -->
+        <section class="threat-stats">
+            <div class="stat-card">
+                <div class="stat-circle critical">1.8K</div>
+                <div class="stat-info">
+                    <h3>Critical Threats</h3>
+                    <p>Requires immediate action</p>
+                </div>
+                <span class="stat-change up">+12.4%</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-circle high">3.3K</div>
+                <div class="stat-info">
+                    <h3>High Severity</h3>
+                    <p>Active monitoring</p>
+                </div>
+                <span class="stat-change up">+8.7%</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-circle medium">6.4K</div>
+                <div class="stat-info">
+                    <h3>Medium Severity</h3>
+                    <p>Under investigation</p>
+                </div>
+                <span class="stat-change down">-3.2%</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-circle low">12.9K</div>
+                <div class="stat-info">
+                    <h3>Low Severity</h3>
+                    <p>Automated handling</p>
+                </div>
+                <span class="stat-change down">-5.1%</span>
+            </div>
+        </section>
+
+        <!-- Main Grid -->
+        <div class="dashboard-grid">
+            <!-- Attack Map -->
+            <div class="panel map-panel">
+                <div class="panel-header">
+                    <h2>🌍 Global Attack Map</h2>
+                    <span class="live-badge">LIVE</span>
+                </div>
+                <div class="map-container">
+                    <div class="globe-grid"></div>
+                    <div class="attack-point" style="top: 20%; left: 15%;"></div>
+                    <div class="attack-point" style="top: 45%; left: 60%;"></div>
+                    <div class="attack-point" style="top: 60%; left: 30%;"></div>
+                    <div class="attack-point" style="top: 35%; left: 80%;"></div>
+                    <div class="attack-point" style="top: 75%; left: 45%;"></div>
+                    <div class="attack-pulse-ring"></div>
+                </div>
+                <div class="map-footer">
+                    <span>Active Attacks: 247</span>
+                    <span>Origins: 38 Countries</span>
+                    <span>Peak: 2,341/min</span>
                 </div>
             </div>
-            <div class="scan-controls">
-                <div class="scan-input-group">
-                    <input type="text" placeholder="Target: IP, Domain, or CIDR" value="192.168.1.0/24">
-                    <button class="btn-primary">START SCAN</button>
-                    <button class="btn-secondary">PAUSE</button>
-                </div>
-                <div class="scan-options-grid">
-                    <label class="option-tag">
-                        <input type="checkbox" checked> Port Scan
-                    </label>
-                    <label class="option-tag">
-                        <input type="checkbox" checked> Service Enumeration
-                    </label>
-                    <label class="option-tag">
-                        <input type="checkbox" checked> Vulnerability Detection
-                    </label>
-                    <label class="option-tag">
-                        <input type="checkbox"> Brute Force
-                    </label>
-                    <label class="option-tag">
-                        <input type="checkbox"> DNS Enumeration
-                    </label>
-                    <label class="option-tag">
-                        <input type="checkbox"> Web App Testing
-                    </label>
-                </div>
-            </div>
-        </div>
 
-        <!-- Results -->
-        <div class="vuln-results">
-            <div class="result-header">
-                <h2>📋 Scan Results</h2>
-                <div class="result-filters">
-                    <button class="filter-btn active">All</button>
-                    <button class="filter-btn critical">Critical</button>
-                    <button class="filter-btn high">High</button>
-                    <button class="filter-btn medium">Medium</button>
-                    <button class="filter-btn low">Low</button>
+            <!-- Threat Feed -->
+            <div class="panel feed-panel">
+                <div class="panel-header">
+                    <h2>📡 Threat Intelligence Feed</h2>
+                    <span class="feed-count">12 New</span>
                 </div>
-            </div>
-            
-            <div class="vuln-list">
-                <div class="vuln-item critical">
-                    <div class="vuln-badge critical">CRITICAL</div>
-                    <div class="vuln-details">
-                        <div class="vuln-title">
-                            <span class="vuln-name">Remote Code Execution</span>
-                            <span class="vuln-cve">CVE-2024-12345</span>
-                        </div>
-                        <p>Apache Struts 2.0.0-2.5.33 - Unauthenticated RCE</p>
-                        <div class="vuln-meta">
-                            <span>CVSS: 9.8</span>
-                            <span>Exploit: Public</span>
-                            <span>Patch: Available</span>
-                            <span class="vuln-risk">High Risk</span>
+                <div class="feed-container">
+                    <div class="feed-item critical">
+                        <div class="feed-dot"></div>
+                        <div class="feed-content">
+                            <div class="feed-header">
+                                <span class="feed-time">14:32:01</span>
+                                <span class="feed-badge critical">CRITICAL</span>
+                            </div>
+                            <p>RCE vulnerability detected in Apache Log4j 2.x</p>
+                            <div class="feed-tags">
+                                <span>CVE-2024-12345</span>
+                                <span>CVSS: 9.8</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="vuln-score">
-                        <div class="score-ring critical">9.8</div>
-                    </div>
-                </div>
-
-                <div class="vuln-item high">
-                    <div class="vuln-badge high">HIGH</div>
-                    <div class="vuln-details">
-                        <div class="vuln-title">
-                            <span class="vuln-name">SQL Injection</span>
-                            <span class="vuln-cve">CVE-2024-67890</span>
-                        </div>
-                        <p>WooCommerce Plugin - Unauthenticated SQLi</p>
-                        <div class="vuln-meta">
-                            <span>CVSS: 7.5</span>
-                            <span>Exploit: POC</span>
-                            <span>Patch: Available</span>
-                            <span class="vuln-risk high">High Risk</span>
+                    <div class="feed-item high">
+                        <div class="feed-dot"></div>
+                        <div class="feed-content">
+                            <div class="feed-header">
+                                <span class="feed-time">14:28:45</span>
+                                <span class="feed-badge high">HIGH</span>
+                            </div>
+                            <p>Massive credential dump from DarkWeb</p>
+                            <div class="feed-tags">
+                                <span>2.4M Records</span>
+                                <span>Financial Sector</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="vuln-score">
-                        <div class="score-ring high">7.5</div>
-                    </div>
-                </div>
-
-                <div class="vuln-item medium">
-                    <div class="vuln-badge medium">MEDIUM</div>
-                    <div class="vuln-details">
-                        <div class="vuln-title">
-                            <span class="vuln-name">Cross-Site Scripting</span>
-                            <span class="vuln-cve">CVE-2024-54321</span>
-                        </div>
-                        <p>Admin Dashboard - Stored XSS</p>
-                        <div class="vuln-meta">
-                            <span>CVSS: 5.3</span>
-                            <span>Exploit: None</span>
-                            <span>Patch: Available</span>
-                            <span class="vuln-risk medium">Medium Risk</span>
+                    <div class="feed-item medium">
+                        <div class="feed-dot"></div>
+                        <div class="feed-content">
+                            <div class="feed-header">
+                                <span class="feed-time">14:25:12</span>
+                                <span class="feed-badge medium">MEDIUM</span>
+                            </div>
+                            <p>New phishing campaign targeting finance</p>
+                            <div class="feed-tags">
+                                <span>Spear Phishing</span>
+                                <span>120 Targets</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="vuln-score">
-                        <div class="score-ring medium">5.3</div>
-                    </div>
-                </div>
-
-                <div class="vuln-item low">
-                    <div class="vuln-badge low">LOW</div>
-                    <div class="vuln-details">
-                        <div class="vuln-title">
-                            <span class="vuln-name">Information Disclosure</span>
-                            <span class="vuln-cve">CVE-2024-11111</span>
+                    <div class="feed-item critical">
+                        <div class="feed-dot"></div>
+                        <div class="feed-content">
+                            <div class="feed-header">
+                                <span class="feed-time">14:20:33</span>
+                                <span class="feed-badge critical">CRITICAL</span>
+                            </div>
+                            <p>Zero-day exploit detected in the wild</p>
+                            <div class="feed-tags">
+                                <span>Active Exploitation</span>
+                                <span>POC Available</span>
+                            </div>
                         </div>
-                        <p>Error Logs - Path Disclosure</p>
-                        <div class="vuln-meta">
-                            <span>CVSS: 3.7</span>
-                            <span>Exploit: None</span>
-                            <span>Patch: Available</span>
-                            <span class="vuln-risk low">Low Risk</span>
-                        </div>
-                    </div>
-                    <div class="vuln-score">
-                        <div class="score-ring low">3.7</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Scan Stats -->
-        <div class="scan-stats-grid">
-            <div class="stat-box">
-                <div class="stat-number">247</div>
-                <div class="stat-label">Ports Scanned</div>
+        <!-- Recent Activity -->
+        <div class="activity-section">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>🔐 Recent Security Events</h2>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">🛡️</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-title">Brute Force Attack Blocked</span>
+                                <span class="activity-time">5 min ago</span>
+                            </div>
+                            <p>Source IP: 185.220.101.23 - 1,247 attempts blocked</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">⚠️</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-title">Suspicious Login Attempt</span>
+                                <span class="activity-time">12 min ago</span>
+                            </div>
+                            <p>User: admin@jeneconk.com - Location: Russia</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">✅</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-title">Vulnerability Patch Applied</span>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                            <p>Critical patch deployed to 47 servers</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🔍</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-title">Threat Scan Completed</span>
+                                <span class="activity-time">3 hours ago</span>
+                            </div>
+                            <p>12 vulnerabilities found, 9 remediated</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">89</div>
-                <div class="stat-label">Services Found</div>
+        </div>
+
+        <!-- Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span>jeneconk@soc:~$</span>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">12</div>
-                <div class="stat-label">Vulnerabilities</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">45s</div>
-                <div class="stat-label">Scan Time</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">9</div>
-                <div class="stat-label">Remediated</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Pending</div>
+            <div class="terminal-body">
+                <div class="terminal-line">> Initializing SOC modules...</div>
+                <div class="terminal-line">> Connected to 247 threat intelligence feeds</div>
+                <div class="terminal-line">> Scanning network for anomalies... [██████████] 100%</div>
+                <div class="terminal-line">> Active threats: 847</div>
+                <div class="terminal-line blink">> Status: PROTECTED</div>
             </div>
         </div>
     </main>
 
     <footer>
         <p>© 2024 Jeneconk Security Operations Center • 24/7 Threat Monitoring</p>
+        <div class="footer-status">
+            <span>🟢 All Systems Operational</span>
+            <span>🔒 End-to-End Encryption</span>
+            <span>🛡️ SOC 2 Compliant</span>
+        </div>
     </footer>
 </body>
 </html>
