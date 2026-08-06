@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeneconk - Breach Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="matrix-bg"></div>
+    
+    <nav>
+        <div class="logo">
+            <span class="brand">JENECONK</span>
+            <span class="sub">Security Operations Center</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="vulnerability.html">Scanner</a></li>
+            <li><a href="breach-db.html" class="active">Breaches</a></li>
+            <li><a href="exploit-lab.html">Exploits</a></li>
+            <li><a href="evasion-tech.html">Evasion</a></li>
+        </ul>
+        <div class="status-indicator">
+            <span class="dot"></span>
+            MONITORING
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>🔓 Breach Database</h1>
+            <div class="header-stats">
+                <span>📊 Total Breaches: 24</span>
+                <span>📈 New: 3 This Week</span>
+                <span>⚠️ Active: 7</span>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="breach-toolbar">
+            <div class="search-bar">
+                <input type="text" placeholder="🔍 Search by company, domain, or breach type...">
+                <button>Search</button>
+            </div>
+            <div class="filter-pills">
+                <span class="pill active">All</span>
+                <span class="pill critical">Critical</span>
+                <span class="pill high">High</span>
+                <span class="pill medium">Medium</span>
+                <span class="pill low">Low</span>
+            </div>
+        </div>
+
+        <!-- Breach Cards -->
+        <div class="breach-grid">
+            <div class="breach-card critical">
+                <div class="breach-card-header">
+                    <div class="breach-company">JENECONK CORP</div>
+                    <div class="breach-status contained">CONTAINED</div>
+                </div>
+                <div class="breach-card-body">
+                    <div class="breach-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Records</span>
+                            <span class="metric-value">2.4M</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Date</span>
+                            <span class="metric-value">2024-01-15</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Type</span>
+                            <span class="metric-value">Credential Leak</span>
+                        </div>
+                    </div>
+                    <div class="breach-description">
+                        <p><strong>Vector:</strong> Phishing Attack</p>
+                        <p><strong>Impact:</strong> Financial data, PII, Credentials</p>
+                    </div>
+                    <div class="breach-tags">
+                        <span>⚡ Critical</span>
+                        <span>🔓 1.2M Exposed</span>
+                        <span>🛡️ Mitigated</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breach-card high">
+                <div class="breach-card-header">
+                    <div class="breach-company">Global Financial Services</div>
+                    <div class="breach-status active">ACTIVE</div>
+                </div>
+                <div class="breach-card-body">
+                    <div class="breach-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Records</span>
+                            <span class="metric-value">8.1M</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Date</span>
+                            <span class="metric-value">2024-01-12</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Type</span>
+                            <span class="metric-value">Database Breach</span>
+                        </div>
+                    </div>
+                    <div class="breach-description">
+                        <p><strong>Vector:</strong> SQL Injection</p>
+                        <p><strong>Impact:</strong> Customer accounts, transactions</p>
+                    </div>
+                    <div class="breach-tags">
+                        <span>⚠️ High</span>
+                        <span>🔓 8.1M Exposed</span>
+                        <span>🔄 In Progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breach-card high">
+                <div class="breach-card-header">
+                    <div class="breach-company">HealthNet Systems</div>
+                    <div class="breach-status contained">CONTAINED</div>
+                </div>
+                <div class="breach-card-body">
+                    <div class="breach-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Records</span>
+                            <span class="metric-value">3.6M</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Date</span>
+                            <span class="metric-value">2024-01-10</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Type</span>
+                            <span class="metric-value">Ransomware</span>
+                        </div>
+                    </div>
+                    <div class="breach-description">
+                        <p><strong>Vector:</strong> Phishing Email</p>
+                        <p><strong>Impact:</strong> Patient records, medical data</p>
+                    </div>
+                    <div class="breach-tags">
+                        <span>⚠️ High</span>
+                        <span>🔓 3.6M Exposed</span>
+                        <span>✅ Resolved</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breach-card medium">
+                <div class="breach-card-header">
+                    <div class="breach-company">TechStart Inc.</div>
+                    <div class="breach-status contained">CONTAINED</div>
+                </div>
+                <div class="breach-card-body">
+                    <div class="breach-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Records</span>
+                            <span class="metric-value">145K</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Date</span>
+                            <span class="metric-value">2024-01-08</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Type</span>
+                            <span class="metric-value">Insider Threat</span>
+                        </div>
+                    </div>
+                    <div class="breach-description">
+                        <p><strong>Vector:</strong> Disgruntled Employee</p>
+                        <p><strong>Impact:</strong> Source code, IP</p>
+                    </div>
+                    <div class="breach-tags">
+                        <span>📊 Medium</span>
+                        <span>🔓 145K Exposed</span>
+                        <span>✅ Resolved</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="breach-stats-footer">
+            <div class="stat-block">
+                <span class="stat-number">24</span>
+                <span class="stat-label">Total Breaches</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">156M</span>
+                <span class="stat-label">Records Exposed</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">$4.2B</span>
+                <span class="stat-label">Estimated Loss</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">67%</span>
+                <span class="stat-label">Increase YoY</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Jeneconk Security Operations Center • 24/7 Threat Monitoring</p>
+    </footer>
+</body>
+</html>
