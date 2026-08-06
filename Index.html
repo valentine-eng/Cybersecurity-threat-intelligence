@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeneconk - Vulnerability Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="matrix-bg"></div>
+    
+    <nav>
+        <div class="logo">
+            <span class="brand">JENECONK</span>
+            <span class="sub">Security Operations Center</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="vulnerability.html" class="active">Scanner</a></li>
+            <li><a href="breach-db.html">Breaches</a></li>
+            <li><a href="exploit-lab.html">Exploits</a></li>
+            <li><a href="evasion-tech.html">Evasion</a></li>
+        </ul>
+        <div class="status-indicator">
+            <span class="dot"></span>
+            SCANNING
+        </div>
+    </nav>
 
+    <main>
+        <div class="page-header">
+            <h1>🔍 Vulnerability Scanner</h1>
+            <div class="header-stats">
+                <span>🔎 Active Scan: 192.168.1.0/24</span>
+                <span>⏱️ Elapsed: 2:34</span>
+                <span>📊 Progress: 67%</span>
+            </div>
+        </div>
+
+        <!-- Scan Interface -->
+        <div class="scan-interface">
+            <div class="scan-bar">
+                <div class="scan-progress" style="width: 67%;">
+                    <span>67%</span>
+                </div>
+            </div>
+            <div class="scan-controls">
+                <div class="scan-input-group">
+                    <input type="text" placeholder="Target: IP, Domain, or CIDR" value="192.168.1.0/24">
+                    <button class="btn-primary">START SCAN</button>
+                    <button class="btn-secondary">PAUSE</button>
+                </div>
+                <div class="scan-options-grid">
+                    <label class="option-tag">
+                        <input type="checkbox" checked> Port Scan
+                    </label>
+                    <label class="option-tag">
+                        <input type="checkbox" checked> Service Enumeration
+                    </label>
+                    <label class="option-tag">
+                        <input type="checkbox" checked> Vulnerability Detection
+                    </label>
+                    <label class="option-tag">
+                        <input type="checkbox"> Brute Force
+                    </label>
+                    <label class="option-tag">
+                        <input type="checkbox"> DNS Enumeration
+                    </label>
+                    <label class="option-tag">
+                        <input type="checkbox"> Web App Testing
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="vuln-results">
+            <div class="result-header">
+                <h2>📋 Scan Results</h2>
+                <div class="result-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn critical">Critical</button>
+                    <button class="filter-btn high">High</button>
+                    <button class="filter-btn medium">Medium</button>
+                    <button class="filter-btn low">Low</button>
+                </div>
+            </div>
+            
+            <div class="vuln-list">
+                <div class="vuln-item critical">
+                    <div class="vuln-badge critical">CRITICAL</div>
+                    <div class="vuln-details">
+                        <div class="vuln-title">
+                            <span class="vuln-name">Remote Code Execution</span>
+                            <span class="vuln-cve">CVE-2024-12345</span>
+                        </div>
+                        <p>Apache Struts 2.0.0-2.5.33 - Unauthenticated RCE</p>
+                        <div class="vuln-meta">
+                            <span>CVSS: 9.8</span>
+                            <span>Exploit: Public</span>
+                            <span>Patch: Available</span>
+                            <span class="vuln-risk">High Risk</span>
+                        </div>
+                    </div>
+                    <div class="vuln-score">
+                        <div class="score-ring critical">9.8</div>
+                    </div>
+                </div>
+
+                <div class="vuln-item high">
+                    <div class="vuln-badge high">HIGH</div>
+                    <div class="vuln-details">
+                        <div class="vuln-title">
+                            <span class="vuln-name">SQL Injection</span>
+                            <span class="vuln-cve">CVE-2024-67890</span>
+                        </div>
+                        <p>WooCommerce Plugin - Unauthenticated SQLi</p>
+                        <div class="vuln-meta">
+                            <span>CVSS: 7.5</span>
+                            <span>Exploit: POC</span>
+                            <span>Patch: Available</span>
+                            <span class="vuln-risk high">High Risk</span>
+                        </div>
+                    </div>
+                    <div class="vuln-score">
+                        <div class="score-ring high">7.5</div>
+                    </div>
+                </div>
+
+                <div class="vuln-item medium">
+                    <div class="vuln-badge medium">MEDIUM</div>
+                    <div class="vuln-details">
+                        <div class="vuln-title">
+                            <span class="vuln-name">Cross-Site Scripting</span>
+                            <span class="vuln-cve">CVE-2024-54321</span>
+                        </div>
+                        <p>Admin Dashboard - Stored XSS</p>
+                        <div class="vuln-meta">
+                            <span>CVSS: 5.3</span>
+                            <span>Exploit: None</span>
+                            <span>Patch: Available</span>
+                            <span class="vuln-risk medium">Medium Risk</span>
+                        </div>
+                    </div>
+                    <div class="vuln-score">
+                        <div class="score-ring medium">5.3</div>
+                    </div>
+                </div>
+
+                <div class="vuln-item low">
+                    <div class="vuln-badge low">LOW</div>
+                    <div class="vuln-details">
+                        <div class="vuln-title">
+                            <span class="vuln-name">Information Disclosure</span>
+                            <span class="vuln-cve">CVE-2024-11111</span>
+                        </div>
+                        <p>Error Logs - Path Disclosure</p>
+                        <div class="vuln-meta">
+                            <span>CVSS: 3.7</span>
+                            <span>Exploit: None</span>
+                            <span>Patch: Available</span>
+                            <span class="vuln-risk low">Low Risk</span>
+                        </div>
+                    </div>
+                    <div class="vuln-score">
+                        <div class="score-ring low">3.7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scan Stats -->
+        <div class="scan-stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">247</div>
+                <div class="stat-label">Ports Scanned</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">89</div>
+                <div class="stat-label">Services Found</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Vulnerabilities</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">45s</div>
+                <div class="stat-label">Scan Time</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Remediated</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Pending</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Jeneconk Security Operations Center • 24/7 Threat Monitoring</p>
+    </footer>
+</body>
+</html>
