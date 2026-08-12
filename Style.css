@@ -1,8 +1,22 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
+
+.logo-image {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.brand {
+    display: block;
+    font-weight: bold;
+}
+
+.sub {
+    display: block;
 
 :root {
     --primary: #00ff9d;
